@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PG9NBF6H');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Car Servicing &amp; Repairs Queanbeyan | Performance Plus</title>
+<meta name="description" content="Trusted local mechanics for car servicing, repairs, and inspections in Queanbeyan. Family-owned since 1986. Honest, reliable, guaranteed service.">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   TOKENS
+   ============================================================ */
+:root {
+  --pp-red:        #e1231a;
+  --pp-red-hover:  #ba2624;
+  --pp-dark:       #231f20;
+  --pp-body:       #333333;
+  --pp-footer:     #080808;
+  --pp-white:      #ffffff;
+  --pp-navy:       #005098;
+  --pp-light-bg:   #f5f5f5;
+  --pp-border:     #e0e0e0;
+
+  --font-display: 'Saira', 'Helvetica Neue', Arial, sans-serif;
+  --font-body:    'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ============================================================
+   RESET / BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--pp-body);
+  background: var(--pp-white);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--pp-navy); text-decoration: none; }
+a:hover { color: var(--pp-red-hover); }
+ul { list-style: none; }
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--pp-dark);
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+
+h1 { font-size: clamp(2rem, 4vw, 3rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
+
+.section-heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  color: var(--pp-dark);
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.section-heading.white { color: var(--pp-white); }
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 14px 32px;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s ease, color 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-red {
+  background: var(--pp-red);
+  color: var(--pp-white);
+}
+.btn-red:hover {
+  background: var(--pp-red-hover);
+  color: var(--pp-white);
+}
+
+.btn-outline-red {
+  background: transparent;
+  color: var(--pp-red);
+  border: 2px solid var(--pp-red);
+}
+.btn-outline-red:hover {
+  background: var(--pp-red);
+  color: var(--pp-white);
+}
+
+.btn-sm { padding: 10px 22px; font-size: 0.85rem; }
+
+/* ============================================================
+   TOP BAR (above nav)
+   ============================================================ */
+.top-bar {
+  background: var(--pp-white);
+  border-bottom: 1px solid var(--pp-border);
+  padding: 8px 0;
+}
+.top-bar .container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+}
+.top-bar-phone {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--pp-dark);
+  letter-spacing: 0.02em;
+}
+.top-bar-phone a {
+  color: var(--pp-dark);
+}
+.top-bar-phone a:hover { color: var(--pp-red); }
+
+/* ============================================================
+   HEADER / NAV
+   ============================================================ */
+.site-header {
+  background: var(--pp-red);
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.site-logo img {
+  height: 52px;
+  width: auto;
+  display: block;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.header-phone-link {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--pp-white);
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+.header-phone-link:hover { color: rgba(255,255,255,0.8); }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  background: var(--pp-dark);
+  color: var(--pp-white);
+  overflow: hidden;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  min-height: 520px;
+}
+.hero-copy {
+  display: flex;
+  align-items: center;
+  padding: 60px 48px 60px 0;
+}
+.hero-copy-inner { max-width: 560px; }
+
+.hero h1 {
+  color: var(--pp-white);
+  margin-bottom: 1rem;
+}
+.hero h2 {
+  color: rgba(255,255,255,0.85);
+  font-family: var(--font-body);
+  font-weight: 400;
+  text-transform: none;
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  margin-bottom: 1.25rem;
+  line-height: 1.55;
+}
+.hero p {
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.hero p strong { color: var(--pp-white); }
+
+.hero-bullets {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.hero-bullets li {
+  color: rgba(255,255,255,0.9);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.hero-image-col {
+  position: relative;
+  overflow: hidden;
+}
+.hero-image-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ============================================================
+   LOCATION / HOURS BAR
+   ============================================================ */
+.location-bar {
+  background: var(--pp-light-bg);
+  padding: 60px 0;
+  border-bottom: 3px solid var(--pp-red);
+}
+.location-bar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.location-info h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.25rem;
+  color: var(--pp-dark);
+}
+.location-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+.location-detail-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.location-label {
+  font-weight: 700;
+  color: var(--pp-red);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  min-width: 70px;
+  font-family: var(--font-display);
+}
+.location-value {
+  color: var(--pp-body);
+  font-size: 0.95rem;
+}
+.location-value a { color: var(--pp-navy); }
+.location-value a:hover { color: var(--pp-red); }
+
+.map-wrap {
+  border: 3px solid var(--pp-red);
+  overflow: hidden;
+  height: 300px;
+}
+.map-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about {
+  padding: 80px 0;
+  background: var(--pp-white);
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.about-copy p {
+  margin-bottom: 1.25rem;
+  line-height: 1.75;
+}
+.about-copy p strong { color: var(--pp-dark); font-weight: 700; }
+.about-cta { margin-top: 1.75rem; }
+.about-cta a {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--pp-red);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 2px solid var(--pp-red);
+  padding-bottom: 2px;
+}
+.about-cta a:hover { color: var(--pp-red-hover); border-color: var(--pp-red-hover); }
+.about-image img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ============================================================
+   SERVICES
+   ============================================================ */
+.services {
+  background: var(--pp-dark);
+  padding: 80px 0;
+  color: var(--pp-white);
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.services-copy .section-heading { color: var(--pp-white); }
+.services-intro {
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 1rem;
+}
+.services-sub-label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--pp-red);
+  margin-bottom: 1rem;
+  display: block;
+}
+.services-list {
+  margin-bottom: 2rem;
+}
+.services-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.9);
+  font-size: 0.95rem;
+}
+.services-list li::before {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: var(--pp-red);
+  flex-shrink: 0;
+}
+.services-list li:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
+
+.services-image-col img {
+  width: 100%;
+  object-fit: cover;
+}
+.services-cta { margin-top: 0.5rem; }
+.services-cta a { font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; color: var(--pp-red); }
+.services-cta a:hover { color: var(--pp-red-hover); }
+
+/* ============================================================
+   USP CARDS
+   ============================================================ */
+.usp {
+  background: var(--pp-white);
+  padding: 80px 0;
+  border-top: 3px solid var(--pp-red);
+}
+.usp .section-heading {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.usp-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 2.5rem;
+}
+.usp-card {
+  background: var(--pp-light-bg);
+  border-top: 4px solid var(--pp-red);
+  padding: 32px 28px;
+}
+.usp-card-number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--pp-red);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.usp-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+.usp-card p {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--pp-body);
+}
+.usp-cta { text-align: center; }
+
+/* ============================================================
+   REVIEWS
+   ============================================================ */
+.reviews {
+  background: var(--pp-dark);
+  padding: 80px 0;
+  color: var(--pp-white);
+}
+.reviews .section-heading { color: var(--pp-white); text-align: center; margin-bottom: 2.5rem; }
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.review-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-top: 3px solid var(--pp-red);
+  padding: 28px 24px;
+}
+.review-stars {
+  color: var(--pp-red);
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+.review-body {
+  color: rgba(255,255,255,0.82);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.review-author {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--pp-white);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ============================================================
+   FAQS
+   ============================================================ */
+.faqs {
+  background: var(--pp-white);
+  padding: 80px 0;
+  border-top: 3px solid var(--pp-red);
+}
+.faqs .section-heading { margin-bottom: 2rem; }
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 800px;
+}
+.faq-item {
+  border-bottom: 1px solid var(--pp-border);
+}
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  cursor: pointer;
+  gap: 16px;
+}
+.faq-question-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.97rem;
+  color: var(--pp-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  flex: 1;
+}
+.faq-icon {
+  width: 24px;
+  height: 24px;
+  background: var(--pp-red);
+  color: var(--pp-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+  line-height: 1;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-answer {
+  display: none;
+  padding: 0 0 20px 0;
+  color: var(--pp-body);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+.faq-item.open .faq-answer { display: block; }
+
+/* ============================================================
+   BOOKING MODAL
+   ============================================================ */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal-overlay.active { display: flex; }
+
+.modal-box {
+  background: var(--pp-white);
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+.modal-header {
+  background: var(--pp-red);
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.modal-header h2 {
+  color: var(--pp-white);
+  font-size: 1.5rem;
+  margin: 0;
+}
+.modal-close {
+  background: none;
+  border: none;
+  color: var(--pp-white);
+  font-size: 1.6rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 0 0 16px;
+}
+.modal-close:hover { opacity: 0.7; }
+
+.modal-body { padding: 28px 32px 32px; }
+.modal-sub {
+  color: var(--pp-body);
+  font-size: 0.88rem;
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+  padding: 12px 14px;
+  background: var(--pp-light-bg);
+  border-left: 3px solid var(--pp-red);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.form-row.single { grid-template-columns: 1fr; }
+.form-row.three { grid-template-columns: 1fr 1fr 1fr; }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.form-group label {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--pp-dark);
+}
+.form-group input,
+.form-group textarea {
+  font-family: var(--font-body);
+  font-size: 0.93rem;
+  padding: 10px 12px;
+  border: 1px solid var(--pp-border);
+  background: var(--pp-white);
+  color: var(--pp-dark);
+  outline: none;
+  width: 100%;
+  transition: border-color 0.2s;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--pp-red);
+}
+.form-group textarea { min-height: 90px; resize: vertical; }
+
+.form-section-label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--pp-red);
+  margin: 18px 0 10px;
+  display: block;
+}
+
+.form-submit-row { margin-top: 20px; }
+.btn-submit {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 14px 36px;
+  background: var(--pp-red);
+  color: var(--pp-white);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+.btn-submit:hover { background: var(--pp-red-hover); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background: var(--pp-footer);
+  color: rgba(255,255,255,0.75);
+  padding: 60px 0 0;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 1.2fr;
+  gap: 48px;
+  padding-bottom: 48px;
+}
+.footer-brand {}
+.footer-logo img {
+  height: 52px;
+  width: auto;
+  margin-bottom: 16px;
+  filter: brightness(0) invert(1);
+}
+.footer-about {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  color: rgba(255,255,255,0.65);
+}
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--pp-white);
+  background: var(--pp-red);
+  padding: 8px 16px;
+}
+.footer-social a:hover { background: var(--pp-red-hover); color: var(--pp-white); }
+
+.footer-col-heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--pp-white);
+  margin-bottom: 16px;
+}
+.footer-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-contact-list li {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.7);
+}
+.footer-contact-list li a {
+  color: rgba(255,255,255,0.7);
+}
+.footer-contact-list li a:hover { color: var(--pp-red); }
+.footer-contact-label {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--pp-red);
+  margin-bottom: 2px;
+}
+
+.footer-services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer-services-list li {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.7);
+  padding-left: 12px;
+  position: relative;
+}
+.footer-services-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 5px;
+  height: 5px;
+  background: var(--pp-red);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.footer-copyright {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+}
+.footer-mm-credit img {
+  height: 28px;
+  width: auto;
+  opacity: 0.65;
+  transition: opacity 0.2s;
+}
+.footer-mm-credit img:hover { opacity: 1; }
+
+/* ============================================================
+   SECTION PADDING UTIL
+   ============================================================ */
+.section-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--pp-red);
+  margin-bottom: 10px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .usp-cards { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; gap: 16px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .services-image-col { display: none; }
+}
+
+@media (max-width: 768px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+  .hero-image-col {
+    height: 260px;
+    order: -1;
+  }
+  .hero-copy {
+    padding: 40px 20px;
+  }
+  .hero-copy-inner { max-width: 100%; }
+
+  .top-bar .container { justify-content: center; }
+
+  .location-bar-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-image { order: -1; }
+
+  .form-row { grid-template-columns: 1fr; }
+  .form-row.three { grid-template-columns: 1fr; }
+
+  .footer-bottom { flex-direction: column; text-align: center; }
+
+  .usp-cards { grid-template-columns: 1fr; }
+
+  .modal-header { padding: 18px 20px; }
+  .modal-body { padding: 20px; }
+}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PG9NBF6H"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- ============================================================
+     TOP BAR
+     ============================================================ -->
+<div class="top-bar">
+  <div class="container">
+    <span class="top-bar-phone"><a href="tel:+61263241091">02 6324 1091</a></span>
+  </div>
+</div>
+
+<!-- ============================================================
+     HEADER / NAV
+     ============================================================ -->
+<header class="site-header">
+  <div class="container">
+    <a href="#" class="site-logo" aria-label="Performance Plus — Home">
+      <img
+        src="https://services.performanceplus.net.au/wp-content/uploads/2025/10/performance-plus-logo.gif"
+        alt="Performance Plus logo"
+        height="52"
+      >
+    </a>
+    <div class="header-actions">
+      <a href="tel:+61263241091" class="header-phone-link">02 6324 1091</a>
+      <button class="btn btn-sm" style="background:var(--pp-white);color:var(--pp-red);font-family:var(--font-display);font-weight:700;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.04em;padding:10px 22px;cursor:pointer;border:none;" onclick="openModal()">BOOK NOW</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" aria-label="Performance Plus hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="hero-copy-inner">
+          <h1>Car Servicing &amp; Repairs in Queanbeyan</h1>
+          <h2>Trusted local mechanics keeping Canberra &amp; Queanbeyan drivers safely on the road since 1986</h2>
+          <p>Looking for expert car servicing in Queanbeyan you can actually rely on? Whether you need a logbook service, pink slip inspection or major mechanical repair, <strong>Performance Plus</strong> delivers top-quality workmanship, honest advice and personalised service – every time.</p>
+          <ul class="hero-bullets">
+            <li>&#10003; Family-owned.</li>
+            <li>&#10003; No surprises.</li>
+            <li>&#10003; Guaranteed repairs.</li>
+          </ul>
+          <button class="btn btn-red" onclick="openModal()">Book My Car Service</button>
+        </div>
+      </div>
+      <div class="hero-image-col">
+        <img
+          src="https://services.performanceplus.net.au/wp-content/uploads/2025/10/2024-10-14.webp"
+          alt="Performance Plus mechanics working on a car in Queanbeyan"
+          loading="eager"
+          fetchpriority="high"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     LOCATION / HOURS BAR
+     ============================================================ -->
+<section class="location-bar" aria-label="Location and hours">
+  <div class="container">
+    <div class="location-bar-grid">
+      <div class="location-info">
+        <h2 class="section-heading">Performance Plus Queanbeyan</h2>
+        <div class="location-detail">
+          <div class="location-detail-row">
+            <span class="location-label">Address</span>
+            <span class="location-value">
+              <a href="https://maps.google.com/?q=Performance+Plus,+E/20+Endurance+Ave,+Queanbeyan+NSW+2620" target="_blank" rel="noopener">E/20 Endurance Ave, Queanbeyan NSW 2620</a>
+            </span>
+          </div>
+          <div class="location-detail-row">
+            <span class="location-label">Phone</span>
+            <span class="location-value">
+              <a href="tel:+61263241091">02 6324 1091</a>
+            </span>
+          </div>
+          <div class="location-detail-row">
+            <span class="location-label">Hours</span>
+            <span class="location-value">Tuesday – Friday: 7:30 AM – 5:30 PM</span>
+          </div>
+          <div class="location-detail-row">
+            <span class="location-label">Email</span>
+            <span class="location-value">
+              <a href="mailto:contact@performanceplus.net.au">contact@performanceplus.net.au</a>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe
+          src="https://maps.google.com/maps?q=Performance%20Plus%2C%20E%2F20%20Endurance%20Ave%2C%20Queanbeyan%20NSW%202620&t=m&z=16&output=embed&iwloc=near"
+          title="Performance Plus location map"
+          loading="lazy"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT
+     ============================================================ -->
+<section class="about" aria-label="About Performance Plus">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-copy">
+        <span class="section-label">About Us</span>
+        <h2 class="section-heading">Welcome to Performance Plus</h2>
+        <p>When it comes to car servicing, not all mechanics are created equal. With over 35 years of experience, <strong>Performance Plus</strong> is proud to be Queanbeyan's go-to automotive service centre – known for our integrity, technical know-how and genuine customer care.</p>
+        <p>DIY fixes or cheap repairs can lead to costly damage, safety risks and voided warranties. That's why we only use quality parts, follow manufacturer guidelines, and <strong>guarantee all our work</strong> – giving you total peace of mind.</p>
+        <div class="about-cta">
+          <a href="tel:+61263241091">Talk to a Local Expert Today</a>
+        </div>
+      </div>
+      <div class="about-image">
+        <img
+          src="https://services.performanceplus.net.au/wp-content/uploads/2025/10/Auto-Repair-Services-Queanbeyan-1024x768.jpg"
+          alt="Auto repair services at Performance Plus Queanbeyan"
+          loading="lazy"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SERVICES
+     ============================================================ -->
+<section class="services" aria-label="Our services">
+  <div class="container">
+    <div class="services-grid">
+      <div class="services-copy">
+        <span class="section-label" style="color:var(--pp-red)">What We Do</span>
+        <h2 class="section-heading" style="color:var(--pp-white)">What We Can Help You With</h2>
+        <p class="services-intro">From logbook servicing to complex diagnostics, we provide reliable repairs for all makes and models – petrol and diesel – including fleet vehicles.</p>
+        <span class="services-sub-label">Our core services include:</span>
+        <ul class="services-list">
+          <li>Roadworthy Inspections (Pink Slips)</li>
+          <li>Logbook Servicing</li>
+          <li>New Car Servicing</li>
+          <li>Carburettor &amp; EFI Services</li>
+          <li>General Mechanical Repairs</li>
+          <li>Diesel Vehicle Servicing (up to 5T)</li>
+        </ul>
+        <div class="services-cta">
+          <a href="tel:+61263241091" class="btn btn-red">Speak to a Mechanic</a>
+        </div>
+      </div>
+      <div class="services-image-col">
+        <img
+          src="https://services.performanceplus.net.au/wp-content/uploads/2025/10/Auto-Repair-Services-Queanbeyan-1024x768.jpg"
+          alt="Performance Plus workshop Queanbeyan"
+          loading="lazy"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     USP CARDS
+     ============================================================ -->
+<section class="usp" aria-label="Why choose Performance Plus">
+  <div class="container">
+    <h2 class="section-heading">3 Reasons Why You'll Love Performance Plus Queanbeyan</h2>
+    <div class="usp-cards">
+      <div class="usp-card">
+        <div class="usp-card-number">01</div>
+        <h3>You're Treated Like a Person, Not a Paycheque</h3>
+        <p>We take the time to explain what your car needs (and what it doesn't). No jargon, no upselling – just honest advice.</p>
+      </div>
+      <div class="usp-card">
+        <div class="usp-card-number">02</div>
+        <h3>Repairs That Are Done Right – First Time</h3>
+        <p>With decades of hands-on experience and the latest tools, we fix it properly and back it with a guarantee.</p>
+      </div>
+      <div class="usp-card">
+        <div class="usp-card-number">03</div>
+        <h3>We Respect Your Time and Budget</h3>
+        <p>Need to get back to work? We offer courtesy cars for major repairs and aim to turn services around quickly and affordably.</p>
+      </div>
+    </div>
+    <div class="usp-cta">
+      <button class="btn btn-red" onclick="openModal()">Book Your Car In Now</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     REVIEWS
+     ============================================================ -->
+<section class="reviews" aria-label="Customer reviews">
+  <div class="container">
+    <h2 class="section-heading">Why Queanbeyan Locals Trust Performance Plus</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-body">Highly recommend Performance Plus! The team went above and beyond, even working overtime on my car when they didn't have to. They took the time to explain everything clearly, making sure I understood what was being done and why. As a woman, it can sometimes be intimidating going into car workshops, but I never once felt taken advantage of here, just genuinely looked after. You can really tell they're passionate about what they do and care about their customers. I'll definitely be a returning customer!</p>
+        <div class="review-author">Claire</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-body">I have been going to Performance Plus for over 15 years and highly recommended their service to anyone looking for a reliable, trustworthy and friendly mechanic. I have always appreciated them taking the time to explain the detail to me and not treating me any differently or providing less information based on gender. They consider cost effective approaches and maintain an extremely organised, efficient and tidy workshop which is a testament to the care and attention to detail they put into every car that comes through their workshop.</p>
+        <div class="review-author">Shannon</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-body">Using this small family owned business for 2.5 years and very glad I found them. Any issues are explained in detail and often accompanied with photos of the relevant part. Work is guaranteed. Kevin and the team are open, honest and do their best to accommodate. Very happy with my Subaru 150,000 km log book service the other day.</p>
+        <div class="review-author">Karen</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQS
+     ============================================================ -->
+<section class="faqs" aria-label="Frequently asked questions">
+  <div class="container">
+    <h2 class="section-heading">FAQs</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-question-text">Why does my car keep needing repairs?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Frequent repairs often mean deeper issues like worn components, skipped services or poor past workmanship. We'll diagnose the root cause – not just treat the symptoms.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-question-text">How long does a standard service take?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Most logbook services are completed same day. We'll let you know upfront if extra work is needed.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-question-text">Do you service fleet or company vehicles?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Absolutely. We're authorised to service vehicles managed by Fleet Card, Maxxia, AVC, Smartfleet and others.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-question-text">Can I keep my warranty with a local mechanic?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Yes. Our logbook services follow all manufacturer specifications, so your warranty stays intact.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-question-text">Do you work on older cars with carburettors?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          We do! In fact, it's one of our specialities. We're one of the few workshops still experienced in carburettor tuning and repairs.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <a href="#" aria-label="Performance Plus — Home">
+            <img
+              src="https://services.performanceplus.net.au/wp-content/uploads/2025/10/performance-plus-logo.gif"
+              alt="Performance Plus logo"
+              height="52"
+            >
+          </a>
+        </div>
+        <p class="footer-about">Performance Plus is one of Queanbeyan's leading automotive service centres – specialising in carburettor and electronic fuel injection (EFI) services, general mechanical repairs, new car servicing and vehicle inspections.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/PerformancePlusQBN" target="_blank" rel="noopener" aria-label="Performance Plus on Facebook">
+            Facebook
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-contact">
+        <div class="footer-col-heading">Contact</div>
+        <ul class="footer-contact-list">
+          <li>
+            <span class="footer-contact-label">Address</span>
+            <a href="https://maps.google.com/?q=Performance+Plus,+E/20+Endurance+Ave,+Queanbeyan+NSW+2620" target="_blank" rel="noopener">E/20 Endurance Ave, Queanbeyan NSW 2620</a>
+          </li>
+          <li>
+            <span class="footer-contact-label">Phone</span>
+            <a href="tel:+61263241091">02 6324 1091</a>
+          </li>
+          <li>
+            <span class="footer-contact-label">Email</span>
+            <a href="mailto:contact@performanceplus.net.au">contact@performanceplus.net.au</a>
+          </li>
+          <li>
+            <span class="footer-contact-label">Hours</span>
+            Tuesday – Friday: 7:30 AM – 5:30 PM
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-services">
+        <div class="footer-col-heading">Services</div>
+        <ul class="footer-services-list">
+          <li>Log Book Servicing</li>
+          <li>Wheel Alignment</li>
+          <li>Mechanical Repairs</li>
+          <li>Brakes</li>
+          <li>Tyres &amp; Wheels</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">Performance Plus 2026 &copy; All Rights Reserved.</p>
+      <div class="footer-mm-credit">
+        <a href="https://mechanicmarketing.co/" target="_blank" rel="noopener" aria-label="Mechanic Marketing">
+          <img
+            src="https://services.performanceplus.net.au/wp-content/uploads/2025/10/MM-LogoInline-RacerOrange-scaled.png"
+            alt="Mechanic Marketing logo"
+            height="28"
+          >
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     BOOKING MODAL
+     ============================================================ -->
+<div class="modal-overlay" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="handleOverlayClick(event)">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h2 id="modalTitle">Book Online</h2>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close booking modal">&#215;</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-sub">Please indicate all services that are required in the note section. We are open Tuesday–Friday 7.30am – 5.30pm. Once your booking request is confirmed, you'll receive a confirmation text.</p>
+      <form action="mailto:contact@performanceplus.net.au" method="post" enctype="text/plain">
+
+        <span class="form-section-label">Contact Details</span>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-name">Name</label>
+            <input type="text" id="f-name" name="Name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="f-phone">Phone</label>
+            <input type="tel" id="f-phone" name="Phone" placeholder="02 xxxx xxxx" required>
+          </div>
+        </div>
+        <div class="form-row single">
+          <div class="form-group">
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" name="Email" placeholder="your@email.com" required>
+          </div>
+        </div>
+
+        <span class="form-section-label">Vehicle Details</span>
+        <div class="form-row three">
+          <div class="form-group">
+            <label for="f-make">Vehicle Make</label>
+            <input type="text" id="f-make" name="Vehicle Make" placeholder="e.g. Toyota">
+          </div>
+          <div class="form-group">
+            <label for="f-model">Vehicle Model</label>
+            <input type="text" id="f-model" name="Vehicle Model" placeholder="e.g. Camry">
+          </div>
+          <div class="form-group">
+            <label for="f-year">Vehicle Year</label>
+            <input type="text" id="f-year" name="Vehicle Year" placeholder="e.g. 2019">
+          </div>
+        </div>
+
+        <span class="form-section-label">Notes</span>
+        <div class="form-row single">
+          <div class="form-group">
+            <label for="f-notes">Notes / Services Required</label>
+            <textarea id="f-notes" name="Notes" placeholder="Describe what your car needs..."></textarea>
+          </div>
+        </div>
+
+        <div class="form-submit-row">
+          <button type="submit" class="btn-submit">submit &#10230;</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script>
+  /* Booking modal */
+  function openModal() {
+    document.getElementById('bookingModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('bookingModal').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('bookingModal')) {
+      closeModal();
+    }
+  }
+
+  /* Keyboard close */
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  /* FAQ accordion */
+  function toggleFaq(questionEl) {
+    var item = questionEl.closest('.faq-item');
+    var isOpen = item.classList.contains('open');
+
+    /* Close all */
+    document.querySelectorAll('.faq-item').forEach(function(el) {
+      el.classList.remove('open');
+    });
+
+    /* Open clicked if it was closed */
+    if (!isOpen) {
+      item.classList.add('open');
+    }
+  }
+</script>
+
+</body>
+</html>
