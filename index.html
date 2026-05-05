@@ -134,13 +134,18 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 .top-bar {
   background: var(--pp-white);
   border-bottom: 1px solid var(--pp-border);
-  padding: 8px 0;
+  padding: 10px 0;
 }
 .top-bar .container {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   gap: 24px;
+}
+.top-bar-logo img {
+  height: 52px;
+  width: auto;
+  display: block;
 }
 .top-bar-phone {
   font-family: var(--font-display);
@@ -150,9 +155,14 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
   letter-spacing: 0.02em;
 }
 .top-bar-phone a {
-  color: var(--pp-dark);
+  display: inline-block;
+  background: var(--pp-red);
+  color: var(--pp-white);
+  padding: 10px 22px;
+  text-decoration: none;
+  transition: background 0.2s;
 }
-.top-bar-phone a:hover { color: var(--pp-red); }
+.top-bar-phone a:hover { background: var(--pp-red-hover); color: var(--pp-white); }
 
 /* ============================================================
    HEADER / NAV
@@ -168,27 +178,53 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
-.site-logo img {
-  height: 52px;
-  width: auto;
-  display: block;
+.site-nav {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  list-style: none;
 }
-.header-actions {
+.site-nav a {
   display: flex;
   align-items: center;
-  gap: 16px;
-}
-.header-phone-link {
+  padding: 14px 20px;
   font-family: var(--font-display);
   font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   color: var(--pp-white);
-  font-size: 1rem;
-  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: background 0.2s;
+  white-space: nowrap;
 }
-.header-phone-link:hover { color: rgba(255,255,255,0.8); }
+.site-nav a:hover { background: rgba(0,0,0,0.15); color: var(--pp-white); }
+.site-nav a.nav-book {
+  background: var(--pp-white);
+  color: var(--pp-red);
+  margin-left: 8px;
+}
+.site-nav a.nav-book:hover { background: rgba(255,255,255,0.9); color: var(--pp-red); }
+
+/* Breadcrumb */
+.breadcrumb-bar {
+  background: var(--pp-light-bg);
+  border-bottom: 1px solid var(--pp-border);
+  padding: 8px 0;
+}
+.breadcrumb {
+  font-size: 0.82rem;
+  color: var(--pp-body);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.breadcrumb a { color: var(--pp-navy); }
+.breadcrumb a:hover { color: var(--pp-red); }
+.breadcrumb-sep { color: #aaa; }
 
 /* ============================================================
    HERO
@@ -772,6 +808,8 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
   height: 5px;
   background: var(--pp-red);
 }
+.footer-services-list li a { color: rgba(255,255,255,0.7); }
+.footer-services-list li a:hover { color: var(--pp-red); }
 
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.08);
@@ -831,7 +869,10 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
   }
   .hero-copy-inner { max-width: 100%; }
 
-  .top-bar .container { justify-content: center; }
+  .top-bar .container { flex-wrap: wrap; gap: 12px; }
+  .top-bar-logo img { height: 40px; }
+
+  .site-nav a { padding: 12px 12px; font-size: 0.78rem; }
 
   .location-bar-grid { grid-template-columns: 1fr; }
   .about-grid { grid-template-columns: 1fr; }
@@ -856,30 +897,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <!-- ============================================================
-     TOP BAR
+     TOP BAR (logo + phone)
      ============================================================ -->
 <div class="top-bar">
   <div class="container">
-    <span class="top-bar-phone"><a href="tel:+61263241091">02 6324 1091</a></span>
+    <div class="top-bar-logo">
+      <a href="/" aria-label="Performance Plus — Home">
+        <img
+          src="https://services.performanceplus.net.au/wp-content/uploads/2025/10/performance-plus-logo.gif"
+          alt="Performance Plus logo"
+          height="52"
+        >
+      </a>
+    </div>
+    <div class="top-bar-phone">
+      <a href="tel:+61263241091">CALL 02 6324 1091</a>
+    </div>
   </div>
 </div>
 
 <!-- ============================================================
-     HEADER / NAV
+     HEADER / NAV BAR
      ============================================================ -->
 <header class="site-header">
   <div class="container">
-    <a href="#" class="site-logo" aria-label="Performance Plus — Home">
-      <img
-        src="https://services.performanceplus.net.au/wp-content/uploads/2025/10/performance-plus-logo.gif"
-        alt="Performance Plus logo"
-        height="52"
-      >
-    </a>
-    <div class="header-actions">
-      <a href="tel:+61263241091" class="header-phone-link">02 6324 1091</a>
-      <button class="btn btn-sm" style="background:var(--pp-white);color:var(--pp-red);font-family:var(--font-display);font-weight:700;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.04em;padding:10px 22px;cursor:pointer;border:none;" onclick="openModal()">BOOK NOW</button>
-    </div>
+    <nav aria-label="Main navigation">
+      <ul class="site-nav">
+        <li><a href="/">HOME</a></li>
+        <li><a href="/#services">SERVICES</a></li>
+        <li><a href="/#contact">CONTACT</a></li>
+        <li><a href="#" class="nav-book" onclick="openModal();return false;">BOOK ONLINE</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
@@ -917,7 +966,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ============================================================
      LOCATION / HOURS BAR
      ============================================================ -->
-<section class="location-bar" aria-label="Location and hours">
+<section class="location-bar" id="contact" aria-label="Location and hours">
   <div class="container">
     <div class="location-bar-grid">
       <div class="location-info">
@@ -988,7 +1037,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ============================================================
      SERVICES
      ============================================================ -->
-<section class="services" aria-label="Our services">
+<section class="services" id="services" aria-label="Our services">
   <div class="container">
     <div class="services-grid">
       <div class="services-copy">
@@ -1186,18 +1235,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="footer-services">
         <div class="footer-col-heading">Services</div>
         <ul class="footer-services-list">
-          <li>Log Book Servicing</li>
-          <li>Wheel Alignment</li>
-          <li>Mechanical Repairs</li>
-          <li>Brakes</li>
-          <li>Tyres &amp; Wheels</li>
+          <li><a href="/logbook-servicing-queanbeyan/">Logbook Servicing</a></li>
+          <li><a href="/pink-slip-queanbeyan/">Pink Slip Inspections</a></li>
+          <li><a href="/fleet-servicing-queanbeyan/">Fleet Servicing</a></li>
+          <li><a href="/efi-carburettor-repairs-queanbeyan/">EFI &amp; Carburettor Repairs</a></li>
+          <li>General Mechanical Repairs</li>
         </ul>
       </div>
 
     </div>
 
     <div class="footer-bottom">
-      <p class="footer-copyright">Performance Plus 2026 &copy; All Rights Reserved.</p>
+      <p class="footer-copyright">Performance Plus 2026 &copy; All Rights Reserved. <a href="/privacy-policy/" style="color:rgba(255,255,255,0.4);">Privacy Policy</a> &nbsp;|&nbsp; <a href="/terms-of-service/" style="color:rgba(255,255,255,0.4);">Terms of Service</a></p>
       <div class="footer-mm-credit">
         <a href="https://mechanicmarketing.co/" target="_blank" rel="noopener" aria-label="Mechanic Marketing">
           <img
