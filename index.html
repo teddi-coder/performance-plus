@@ -253,6 +253,55 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
   background: rgba(255,255,255,0.15);
   color: var(--pp-white);
 }
+.header-cta-call {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.4rem 1rem;
+  background: var(--pp-white);
+  color: var(--pp-dark);
+  border: none;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.header-cta-call:hover {
+  background: rgba(255,255,255,0.88);
+  color: var(--pp-dark);
+}
+
+/* Sub-header nav */
+.sub-nav {
+  background: var(--pp-dark);
+  border-bottom: 2px solid var(--pp-red);
+}
+.sub-nav .container {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  gap: 0;
+}
+.sub-nav a {
+  display: flex;
+  align-items: center;
+  padding: 11px 18px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s, background 0.2s;
+}
+.sub-nav a:hover {
+  color: var(--pp-white);
+  background: rgba(255,255,255,0.08);
+}
 
 /* Breadcrumb */
 .breadcrumb-bar {
@@ -327,13 +376,71 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 .hero-image-col {
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: stretch;
 }
 .hero-image-col img {
   width: 100%;
   height: 100%;
+  max-width: 100%;
   object-fit: cover;
   object-position: center;
+  display: block;
 }
+
+/* Trust badge */
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 1.25rem;
+}
+.trust-badge .stars {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* CTA pair */
+.cta-pair {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 1.75rem;
+}
+.btn-primary {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 14px 32px;
+  background: var(--pp-red);
+  color: var(--pp-white);
+  border: none;
+  text-decoration: none;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+.btn-primary:hover { background: var(--pp-red-hover); color: var(--pp-white); }
+.btn-secondary {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 14px 32px;
+  background: transparent;
+  color: var(--pp-red);
+  border: 2px solid var(--pp-red);
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+.btn-secondary:hover { background: var(--pp-red); color: var(--pp-white); }
 
 /* ============================================================
    LOCATION / HOURS BAR
@@ -970,9 +1077,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="header-cta">
       <a href="#contact" class="btn-header-primary">Get a Quote</a>
       <a href="tel:+61263241091" class="btn-header-secondary">Call 02 6324 1091</a>
+      <a href="tel:+61263241091" class="header-cta-call">Call Now</a>
     </div>
   </div>
 </header>
+
+<!-- ============================================================
+     SUB-HEADER NAV
+     ============================================================ -->
+<nav class="sub-nav" aria-label="Page sections">
+  <div class="container">
+    <a href="#about">About Us</a>
+    <a href="#services">Services</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
 <!-- ============================================================
      HERO
@@ -984,6 +1105,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="hero-copy-inner">
           <h1>Car Servicing &amp; Repairs in Queanbeyan</h1>
           <h2>Trusted local mechanics keeping Canberra &amp; Queanbeyan drivers safely on the road since 1986</h2>
+          <!-- TODO: confirm actual review count -->
+          <div class="trust-badge">
+            <span class="stars">&#11088;</span>
+            <span>4.7 Rated by 300+ Customers</span>
+          </div>
           <p>Looking for expert car servicing in Queanbeyan you can actually rely on? Whether you need a logbook service, pink slip inspection or major mechanical repair, <strong>Performance Plus</strong> delivers top-quality workmanship, honest advice and personalised service – every time.</p>
           <ul class="hero-bullets">
             <li>&#10003; Family-owned.</li>
@@ -1047,13 +1173,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         ></iframe>
       </div>
     </div>
+    <div class="cta-pair">
+      <a href="tel:+61263241091" class="btn btn-primary">Call Now</a>
+      <a href="#contact" class="btn btn-secondary">Submit Form</a>
+    </div>
   </div>
 </section>
 
 <!-- ============================================================
      ABOUT
      ============================================================ -->
-<section class="about" aria-label="About Performance Plus">
+<section class="about" id="about" aria-label="About Performance Plus">
   <div class="container">
     <div class="about-grid">
       <div class="about-copy">
@@ -1072,6 +1202,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           loading="lazy"
         >
       </div>
+    </div>
+    <div class="cta-pair">
+      <a href="tel:+61263241091" class="btn btn-primary">Call Now</a>
+      <a href="#contact" class="btn btn-secondary">Submit Form</a>
     </div>
   </div>
 </section>
@@ -1097,6 +1231,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
         <div class="services-cta">
           <a href="#contact" class="btn btn-red">Get a Quote</a>
+          <div class="cta-pair">
+            <a href="tel:+61263241091" class="btn btn-primary">Call Now</a>
+            <a href="#contact" class="btn btn-secondary">Submit Form</a>
+          </div>
         </div>
       </div>
     </div>
@@ -1129,13 +1267,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="usp-cta">
       <button class="btn btn-red" onclick="openModal()">Book Your Car In Now</button>
     </div>
+    <div class="cta-pair" style="justify-content:center;">
+      <a href="tel:+61263241091" class="btn btn-primary">Call Now</a>
+      <a href="#contact" class="btn btn-secondary">Submit Form</a>
+    </div>
   </div>
 </section>
 
 <!-- ============================================================
      REVIEWS
      ============================================================ -->
-<section class="reviews" aria-label="Customer reviews">
+<section class="reviews" id="reviews" aria-label="Customer reviews">
   <div class="container">
     <h2 class="section-heading">Why Queanbeyan Locals Trust Performance Plus</h2>
     <div class="reviews-grid">
@@ -1155,13 +1297,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="review-author">Karen</div>
       </div>
     </div>
+    <div style="text-align:center; margin-top:2rem;">
+      <!-- TODO: replace href with actual Google Reviews URL -->
+      <a href="#" target="_blank" rel="noopener" class="btn btn-secondary" style="color:var(--pp-white);border-color:var(--pp-white);">Read More Google Reviews</a>
+    </div>
+    <div class="cta-pair" style="justify-content:center; margin-top:1.5rem;">
+      <a href="tel:+61263241091" class="btn btn-primary">Call Now</a>
+      <a href="#contact" class="btn btn-secondary" style="color:var(--pp-white);border-color:var(--pp-white);">Submit Form</a>
+    </div>
   </div>
 </section>
 
 <!-- ============================================================
      FAQS
      ============================================================ -->
-<section class="faqs" aria-label="Frequently asked questions">
+<section class="faqs" id="faq" aria-label="Frequently asked questions">
   <div class="container">
     <h2 class="section-heading">FAQs</h2>
     <div class="faq-list">
