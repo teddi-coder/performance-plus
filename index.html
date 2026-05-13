@@ -171,8 +171,8 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
   background: var(--pp-red);
   position: sticky;
   top: 0;
-  z-index: 900;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
 }
 .site-header .container {
   display: flex;
@@ -208,6 +208,51 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
   margin-left: 8px;
 }
 .site-nav a.nav-book:hover { background: rgba(255,255,255,0.9); color: var(--pp-red); }
+
+.header-cta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 16px;
+}
+.header-cta .btn-header-primary {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 10px 22px;
+  background: var(--pp-white);
+  color: var(--pp-red);
+  border: none;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+.header-cta .btn-header-primary:hover {
+  background: rgba(255,255,255,0.88);
+  color: var(--pp-red);
+}
+.header-cta .btn-header-secondary {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 10px 22px;
+  background: transparent;
+  color: var(--pp-white);
+  border: 2px solid var(--pp-white);
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+.header-cta .btn-header-secondary:hover {
+  background: rgba(255,255,255,0.15);
+  color: var(--pp-white);
+}
 
 /* Breadcrumb */
 .breadcrumb-bar {
@@ -922,14 +967,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      ============================================================ -->
 <header class="site-header">
   <div class="container">
-    <nav aria-label="Main navigation">
-      <ul class="site-nav">
-        <li><a href="/">HOME</a></li>
-        <li><a href="/#services">SERVICES</a></li>
-        <li><a href="/#contact">CONTACT</a></li>
-        <li><a href="#" class="nav-book" onclick="openModal();return false;">BOOK ONLINE</a></li>
-      </ul>
-    </nav>
+    <div class="header-cta">
+      <a href="#contact" class="btn-header-primary">Get a Quote</a>
+      <a href="tel:+61263241091" class="btn-header-secondary">Call 02 6324 1091</a>
+    </div>
   </div>
 </header>
 
@@ -999,7 +1040,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="map-wrap">
         <iframe
-          src="https://maps.google.com/maps?q=Performance%20Plus%2C%20E%2F20%20Endurance%20Ave%2C%20Queanbeyan%20NSW%202620&t=m&z=16&output=embed&iwloc=near"
+          src="https://maps.google.com/maps?q=Performance%20Plus%2C%20E%2F20%20Endurance%20Ave%2C%20Queanbeyan%20NSW%202620&t=m&z=14&output=embed&iwloc=near"
           title="Performance Plus location map"
           loading="lazy"
           allowfullscreen
@@ -1021,7 +1062,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>When it comes to car servicing, not all mechanics are created equal. With over 35 years of experience, <strong>Performance Plus</strong> is proud to be Queanbeyan's go-to automotive service centre – known for our integrity, technical know-how and genuine customer care.</p>
         <p>DIY fixes or cheap repairs can lead to costly damage, safety risks and voided warranties. That's why we only use quality parts, follow manufacturer guidelines, and <strong>guarantee all our work</strong> – giving you total peace of mind.</p>
         <div class="about-cta">
-          <a href="tel:+61263241091">Talk to a Local Expert Today</a>
+          <a href="tel:+61263241091">Call 02 6324 1091 — Talk to a Local Expert Today</a>
         </div>
       </div>
       <div class="about-image">
@@ -1055,15 +1096,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li>Diesel Vehicle Servicing (up to 5T)</li>
         </ul>
         <div class="services-cta">
-          <a href="tel:+61263241091" class="btn btn-red">Speak to a Mechanic</a>
+          <a href="#contact" class="btn btn-red">Get a Quote</a>
         </div>
-      </div>
-      <div class="services-image-col">
-        <img
-          src="https://services.performanceplus.net.au/wp-content/uploads/2025/10/Auto-Repair-Services-Queanbeyan-1024x768.jpg"
-          alt="Performance Plus workshop Queanbeyan"
-          loading="lazy"
-        >
       </div>
     </div>
   </div>
