@@ -1456,7 +1456,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="modal-body">
       <p class="modal-sub">Please indicate all services that are required in the note section. We are open Tuesday–Friday 7.30am – 5.30pm. Once your booking request is confirmed, you'll receive a confirmation text.</p>
-      <form action="mailto:contact@performanceplus.net.au" method="post" enctype="text/plain">
+      <form id="pp-booking-form" action="#">
 
         <span class="form-section-label">Contact Details</span>
         <div class="form-row">
@@ -1550,6 +1550,81 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
   }
 </script>
+
+  <!-- Supabase SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Booking form — Supabase submission with tracking -->
+  <script>
+    (function () {
+      var SUPABASE_URL     = 'https://prqbvbhuwfpdkkrkqizj.supabase.co';
+      var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBycWJ2Ymh1d2ZwZGtrcmtxaXpqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY5OTA1MzQsImV4cCI6MjA5MjU2NjUzNH0.Io5IHsyp23yThoyZD7Ccs4UygTtwx_0rIRTlnS3pYZQ';
+
+      function getParam(key) {
+        return new URLSearchParams(window.location.search).get(key) || null;
+      }
+
+      var form = document.getElementById('pp-booking-form');
+      if (!form) return;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var submitBtn = form.querySelector('[type="submit"]');
+        var orig = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+
+        var sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        var payload = {
+          customer_name:  document.getElementById('f-name').value.trim(),
+          customer_email: document.getElementById('f-email').value.trim(),
+          customer_phone: document.getElementById('f-phone').value.trim(),
+          vehicle_make:   document.getElementById('f-make').value.trim() || null,
+          vehicle_model:  document.getElementById('f-model').value.trim() || null,
+          vehicle_year:   document.getElementById('f-year').value.trim() || null,
+          notes:          document.getElementById('f-notes').value.trim() || null,
+          utm_source:     getParam('utm_source'),
+          utm_medium:     getParam('utm_medium'),
+          utm_campaign:   getParam('utm_campaign'),
+          utm_content:    getParam('utm_content'),
+          utm_term:       getParam('utm_term'),
+          gclid:          getParam('gclid'),
+          landing_page:   window.location.pathname
+        };
+
+        sb.from('pp_bookings').insert([payload]).then(function (result) {
+          if (result.error) throw result.error;
+
+          if (window.dataLayer) {
+            dataLayer.push({ event: 'form_submission', form_name: 'booking_form', conversion_type: 'booking_enquiry' });
+          }
+          if (typeof gtag === 'function') {
+            gtag('event', 'generate_lead', {});
+          }
+
+          form.innerHTML = '<div style="padding:24px 0;text-align:center;">'
+            + '<p style="font-size:18px;font-weight:600;margin-bottom:8px;">Booking request sent!</p>'
+            + '<p style="color:#555;">We\'ll be in touch within 1 business day to confirm your appointment.</p>'
+            + '</div>';
+
+        }).catch(function (err) {
+          console.error('Booking error:', err);
+          submitBtn.disabled = false;
+          submitBtn.textContent = orig;
+          var errMsg = form.querySelector('.form-error-msg');
+          if (!errMsg) {
+            errMsg = document.createElement('p');
+            errMsg.className = 'form-error-msg';
+            errMsg.style.cssText = 'color:red;margin-top:12px;font-size:14px;';
+            errMsg.textContent = 'Something went wrong — please call us on 02 6324 1091.';
+            form.appendChild(errMsg);
+          }
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>
