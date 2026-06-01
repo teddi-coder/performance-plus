@@ -1042,7 +1042,8 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
   .modal-body { padding: 20px; }
 }
 </style>
-<script type="text/javascript" src="//s.ksrndkehqnwntyxlhgto.com/154641.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="text/javascript" src="//s.ksrndkehqnwntyxlhgto.com/154641.js"></script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1446,7 +1447,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="modal-body">
       <p class="modal-sub">Please indicate all services that are required in the note section. We are open Tuesday–Friday 7.30am – 5.30pm. Once your booking request is confirmed, you'll receive a confirmation text.</p>
-      <form action="mailto:contact@performanceplus.net.au" method="post" enctype="text/plain">
+      <form id="pp-booking-form" novalidate>
 
         <span class="form-section-label">Contact Details</span>
         <div class="form-row">
@@ -1539,6 +1540,75 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       item.classList.add('open');
     }
   }
+
+/* ============================================================
+   BOOKING FORM SUBMIT
+   ============================================================ */
+(function() {
+  'use strict';
+
+  var SUPABASE_URL      = 'https://prqbvbhuwfpdkkrkqizj.supabase.co';
+  var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBycWJ2Ymh1d2ZwZGtrcmtxaXpqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc5NjIzMjYsImV4cCI6MjAyMzUzODMyNn0.gN1RjSEFRBFhDhOe-PN-HS2bCQvfnhGaYJQFzHLCpjQ';
+
+  var form = document.getElementById('pp-booking-form');
+  if (!form) return;
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // WhatConverts — fire immediately on submit, before any async work
+    try {
+      if (typeof window.wc_capture_form === 'function') {
+        window.wc_capture_form(form);
+      }
+    } catch (wcErr) {
+      console.warn('WhatConverts capture failed:', wcErr);
+    }
+
+    var submitBtn = form.querySelector('.btn-submit');
+    if (submitBtn) {
+      submitBtn.disabled    = true;
+      submitBtn.textContent = 'Sending…';
+    }
+
+    var payload = {
+      customer_name:  document.getElementById('f-name').value.trim(),
+      customer_phone: document.getElementById('f-phone').value.trim(),
+      customer_email: document.getElementById('f-email').value.trim(),
+      vehicle_make:   document.getElementById('f-make').value.trim() || null,
+      vehicle_model:  document.getElementById('f-model').value.trim() || null,
+      vehicle_year:   document.getElementById('f-year').value.trim() || null,
+      notes:          document.getElementById('f-notes').value.trim() || null,
+      utm_source:     new URLSearchParams(window.location.search).get('utm_source'),
+      utm_medium:     new URLSearchParams(window.location.search).get('utm_medium'),
+      utm_campaign:   new URLSearchParams(window.location.search).get('utm_campaign'),
+      gclid:          new URLSearchParams(window.location.search).get('gclid'),
+      landing_page:   window.location.pathname
+    };
+
+    var sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    sb.from('pp_bookings').insert([payload]).then(function(result) {
+      if (result.error) {
+        console.error('Booking error:', result.error);
+        if (submitBtn) {
+          submitBtn.disabled    = false;
+          submitBtn.textContent = 'submit →';
+        }
+        return;
+      }
+
+      // GA4
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', { form_name: 'booking_modal' });
+      }
+
+      // Success state
+      form.innerHTML = '<p style="padding:1rem 0;font-weight:600;color:#c0392b;">Thanks! We\'ll be in touch to confirm your booking.</p>';
+    });
+  });
+
+}());
 </script>
 
 </body>
