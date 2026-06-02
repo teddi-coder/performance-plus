@@ -1,0 +1,9 @@
+# Redirects for orphaned WordPress URLs
+# Format: /old-path /new-path 301
+
+/diesel/                    /                       301
+/hello-world/               /                       301
+/category/uncategorized/    /                       301
+
+# Catch-all
+/*                          /                       301
