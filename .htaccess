@@ -1,0 +1,10 @@
+Options -MultiViews
+RewriteEngine On
+
+RewriteRule ^diesel/?$ / [R=301,L]
+RewriteRule ^hello-world/?$ / [R=301,L]
+RewriteRule ^category/uncategorized/?$ / [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ / [R=301,L]
