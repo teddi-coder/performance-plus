@@ -103,30 +103,54 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 .btn-red:hover { background: var(--pp-red-hover); color: var(--pp-white); }
 
 /* ============================================================
-   TOP BAR
+   TOP BAR (sticky)
    ============================================================ */
 .top-bar {
   background: var(--pp-white);
   border-bottom: 1px solid var(--pp-border);
   padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: padding 0.25s ease;
 }
+.top-bar.scrolled { padding: 6px 0; box-shadow: 0 3px 12px rgba(0,0,0,0.15); }
 .top-bar .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 16px;
 }
-.top-bar-logo img { height: 52px; width: auto; display: block; }
-.top-bar-phone { font-family: var(--font-display); font-weight: 700; font-size: 1rem; }
+.top-bar-logo img { height: 52px; width: auto; display: block; transition: height 0.25s ease; }
+.top-bar.scrolled .top-bar-logo img { height: 46px; }
+.top-bar-actions { display: flex; align-items: center; gap: 10px; }
 .top-bar-phone a {
   display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
   background: var(--pp-red);
   color: var(--pp-white);
   padding: 10px 22px;
   text-decoration: none;
   transition: background 0.2s;
+  white-space: nowrap;
 }
 .top-bar-phone a:hover { background: var(--pp-red-hover); color: var(--pp-white); }
+.top-bar-quote a {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  background: var(--pp-dark);
+  color: var(--pp-white);
+  padding: 10px 22px;
+  text-decoration: none;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.top-bar-quote a:hover { background: #3a3435; color: var(--pp-white); }
 
 /* ============================================================
    NAV BAR
@@ -439,12 +463,13 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
   padding: 80px 0;
   border-top: 3px solid var(--pp-red);
 }
-.faqs .section-heading { margin-bottom: 2rem; }
+.faqs .section-heading { text-align: center; margin-bottom: 2rem; }
 .faq-list {
   display: flex;
   flex-direction: column;
   gap: 0;
   max-width: 800px;
+  margin: 0 auto;
 }
 .faq-item { border-bottom: 1px solid var(--pp-border); }
 .faq-question {
@@ -463,6 +488,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
   text-transform: uppercase;
   letter-spacing: 0.02em;
   flex: 1;
+  text-align: center;
 }
 .faq-icon {
   width: 24px;
@@ -609,32 +635,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <!-- TOP BAR -->
-<div class="top-bar">
+<div class="top-bar" id="topBar">
   <div class="container">
     <div class="top-bar-logo">
       <a href="../" aria-label="Performance Plus — Home">
         <img src="../images/performance-plus-logo.gif" alt="Performance Plus logo" height="52">
       </a>
     </div>
-    <div class="top-bar-phone">
-      <a href="tel:+61263241091">CALL 02 6324 1091</a>
+    <div class="top-bar-actions">
+      <div class="top-bar-quote">
+        <a href="#form">Get a Quote</a>
+      </div>
+      <div class="top-bar-phone">
+        <a href="tel:+61263241091">CALL 02 6324 1091</a>
+      </div>
     </div>
   </div>
 </div>
-
-<!-- NAV BAR -->
-<header class="site-header">
-  <div class="container">
-    <nav aria-label="Main navigation">
-      <ul class="site-nav">
-        <li><a href="../">HOME</a></li>
-        <li><a href="../#services">SERVICES</a></li>
-        <li><a href="../#contact">CONTACT</a></li>
-        <li><a href="#form" class="nav-book">BOOK ONLINE</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
 
 <!-- BREADCRUMB -->
 <div class="breadcrumb-bar">
@@ -714,6 +731,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>Need to get back to work? We offer courtesy cars for major repairs and aim to turn services around quickly and affordably.</p>
       </div>
     </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:2rem;justify-content:center;">
+      <a href="tel:+61263241091" style="display:inline-block;font-family:'Saira','Helvetica Neue',Arial,sans-serif;font-weight:700;font-size:0.95rem;text-transform:uppercase;letter-spacing:0.04em;padding:14px 32px;background:var(--pp-red);color:#fff;text-decoration:none;transition:background 0.2s;">Call Now</a>
+      <a href="#form" style="display:inline-block;font-family:'Saira','Helvetica Neue',Arial,sans-serif;font-weight:700;font-size:0.95rem;text-transform:uppercase;letter-spacing:0.04em;padding:14px 32px;background:transparent;color:var(--pp-red);border:2px solid var(--pp-red);text-decoration:none;transition:background 0.2s,color 0.2s;">Get an Estimate</a>
+    </div>
   </div>
 </section>
 
@@ -789,7 +810,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
         <div class="form-submit-row">
-          <button type="submit" class="btn-submit">Submit &#10230;</button>
+          <button type="submit" class="btn-submit">Get an Estimate &#10230;</button>
         </div>
       </form>
     </div>
@@ -883,6 +904,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <script>
+  /* Sticky header shrink on scroll */
+  (function() {
+    var topBar = document.getElementById('topBar');
+    window.addEventListener('scroll', function() {
+      topBar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  }());
+
   function toggleFaq(questionEl) {
     var item = questionEl.closest('.faq-item');
     var isOpen = item.classList.contains('open');
