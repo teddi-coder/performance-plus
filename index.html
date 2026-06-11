@@ -14,6 +14,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <title>Car Servicing &amp; Repairs Queanbeyan | Performance Plus</title>
 <meta name="description" content="Trusted local mechanics for car servicing, repairs, and inspections in Queanbeyan. Family-owned since 1986. Honest, reliable, guaranteed service.">
 <link rel="canonical" href="https://teddi-coder.github.io/performance-plus/" />
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -911,7 +912,69 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
   .reviews-grid { grid-template-columns: 1fr; gap: 16px; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .services-grid { grid-template-columns: 1fr; }
-  .services-image-col { display: none; }
+  .services-image-col { display: block; }
+  .services-image-col img { width: 100%; height: 280px; object-fit: cover; }
+}
+
+/* ============================================================
+   SCROLL ANIMATIONS
+   ============================================================ */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+[data-reveal="left"] {
+  transform: translateX(-32px);
+}
+[data-reveal="right"] {
+  transform: translateX(32px);
+}
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+[data-reveal-delay="1"] { transition-delay: 0.1s; }
+[data-reveal-delay="2"] { transition-delay: 0.2s; }
+[data-reveal-delay="3"] { transition-delay: 0.3s; }
+
+.btn-primary, .btn-secondary, .btn-red {
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-primary:hover, .btn-red:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(225,35,26,0.35);
+}
+.btn-secondary:hover {
+  transform: translateY(-2px);
+}
+
+.usp-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.usp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.review-card {
+  transition: transform 0.25s ease;
+}
+.review-card:hover {
+  transform: translateY(-3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .btn-primary:hover, .btn-secondary:hover, .btn-red:hover,
+  .usp-card:hover, .review-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1105,7 +1168,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="about" id="about" aria-label="About Performance Plus">
   <div class="container">
     <div class="about-grid">
-      <div class="about-copy">
+      <div class="about-copy" data-reveal="left">
         <span class="section-label">About Us</span>
         <h2 class="section-heading">Welcome to Performance Plus</h2>
         <p>When it comes to car servicing, not all mechanics are created equal. With over 35 years of experience, <strong>Performance Plus</strong> is proud to be Queanbeyan's go-to automotive service centre – known for our integrity, technical know-how and genuine customer care.</p>
@@ -1114,7 +1177,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <a href="tel:+61263241091">Call 02 6324 1091 — Talk to a Local Expert Today</a>
         </div>
       </div>
-      <div class="about-image">
+      <div class="about-image" data-reveal="right">
         <img
           src="images/Auto-Repair-Services-Queanbeyan-1024x768.jpg"
           alt="Auto repair services at Performance Plus Queanbeyan"
@@ -1135,7 +1198,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="services" id="services" aria-label="Our services">
   <div class="container">
     <div class="services-grid">
-      <div class="services-copy">
+      <div class="services-image-col" data-reveal="left">
+        <img
+          src="images/Performance Plus - Vehicle Servicing.jpg"
+          alt="Vehicle servicing at Performance Plus Queanbeyan"
+          loading="lazy"
+        >
+      </div>
+      <div class="services-copy" data-reveal="right">
         <span class="section-label" style="color:var(--pp-red)">What We Do</span>
         <h2 class="section-heading" style="color:var(--pp-white)">What We Can Help You With</h2>
         <p class="services-intro">From logbook servicing to complex diagnostics, we provide reliable repairs for all makes and models – petrol and diesel – including fleet vehicles.</p>
@@ -1155,13 +1225,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
       </div>
-      <div class="services-image-col">
-        <img
-          src="images/Auto-Repair-Services-Queanbeyan-1024x768.jpg"
-          alt="Mechanic servicing a car at Performance Plus Queanbeyan"
-          loading="lazy"
-        >
-      </div>
     </div>
   </div>
 </section>
@@ -1173,17 +1236,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <h2 class="section-heading">3 Reasons Why You'll Love Performance Plus Queanbeyan</h2>
     <div class="usp-cards">
-      <div class="usp-card">
+      <div class="usp-card" data-reveal data-reveal-delay="1">
         <div class="usp-card-number">01</div>
         <h3>You're Treated Like a Person, Not a Paycheque</h3>
         <p>We take the time to explain what your car needs (and what it doesn't). No jargon, no upselling – just honest advice.</p>
       </div>
-      <div class="usp-card">
+      <div class="usp-card" data-reveal data-reveal-delay="2">
         <div class="usp-card-number">02</div>
         <h3>Repairs That Are Done Right – First Time</h3>
         <p>With decades of hands-on experience and the latest tools, we fix it properly and back it with a guarantee.</p>
       </div>
-      <div class="usp-card">
+      <div class="usp-card" data-reveal data-reveal-delay="3">
         <div class="usp-card-number">03</div>
         <h3>We Respect Your Time and Budget</h3>
         <p>Need to get back to work? We offer courtesy cars for major repairs and aim to turn services around quickly and affordably.</p>
@@ -1203,17 +1266,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <h2 class="section-heading">Why Queanbeyan Locals Trust Performance Plus</h2>
     <div class="reviews-grid">
-      <div class="review-card">
+      <div class="review-card" data-reveal data-reveal-delay="1">
         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p class="review-body">Highly recommend Performance Plus! The team went above and beyond, even working overtime on my car when they didn't have to. They took the time to explain everything clearly, making sure I understood what was being done and why. As a woman, it can sometimes be intimidating going into car workshops, but I never once felt taken advantage of here, just genuinely looked after. You can really tell they're passionate about what they do and care about their customers. I'll definitely be a returning customer!</p>
         <div class="review-author">Claire</div>
       </div>
-      <div class="review-card">
+      <div class="review-card" data-reveal data-reveal-delay="2">
         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p class="review-body">I have been going to Performance Plus for over 15 years and highly recommended their service to anyone looking for a reliable, trustworthy and friendly mechanic. I have always appreciated them taking the time to explain the detail to me and not treating me any differently or providing less information based on gender. They consider cost effective approaches and maintain an extremely organised, efficient and tidy workshop which is a testament to the care and attention to detail they put into every car that comes through their workshop.</p>
         <div class="review-author">Shannon</div>
       </div>
-      <div class="review-card">
+      <div class="review-card" data-reveal data-reveal-delay="3">
         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p class="review-body">Using this small family owned business for 2.5 years and very glad I found them. Any issues are explained in detail and often accompanied with photos of the relevant part. Work is guaranteed. Kevin and the team are open, honest and do their best to accommodate. Very happy with my Subaru 150,000 km log book service the other day.</p>
         <div class="review-author">Karen</div>
@@ -1553,5 +1616,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 }());
 </script>
 
+<script>
+(function() {
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('[data-reveal]').forEach(function(el) {
+      el.classList.add('revealed');
+    });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('[data-reveal]').forEach(function(el) {
+    observer.observe(el);
+  });
+}());
+</script>
 </body>
 </html>
