@@ -17,6 +17,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Saira:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
 
 <style>
 :root {
@@ -176,6 +177,34 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
   .form-row.three { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; text-align: center; }
   .usp-cards { grid-template-columns: 1fr; }
+  .vs-grid { grid-template-columns: 1fr; gap: 32px; }
+  .vs-image img { height: 240px; }
+}
+
+/* VEHICLE SERVICING SECTION */
+.vehicle-servicing { background: var(--pp-white); padding: 80px 0; border-top: 3px solid var(--pp-red); }
+.vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.vs-image img { width: 100%; height: 400px; object-fit: cover; }
+.vs-copy p { margin-bottom: 1.25rem; line-height: 1.75; }
+.vs-cta { margin-top: 1.75rem; display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* SCROLL ANIMATIONS */
+[data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+[data-reveal="left"] { transform: translateX(-32px); }
+[data-reveal="right"] { transform: translateX(32px); }
+[data-reveal].revealed { opacity: 1; transform: translate(0,0); }
+[data-reveal-delay="1"] { transition-delay: 0.1s; }
+[data-reveal-delay="2"] { transition-delay: 0.2s; }
+[data-reveal-delay="3"] { transition-delay: 0.3s; }
+.btn { transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease; }
+.btn-red:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(225,35,26,0.35); }
+.usp-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.usp-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+.review-card { transition: transform 0.25s ease; }
+.review-card:hover { transform: translateY(-3px); }
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .btn-red:hover, .usp-card:hover, .review-card:hover { transform: none; box-shadow: none; }
 }
 </style>
 <script type="text/javascript" src="//s.ksrndkehqnwntyxlhgto.com/154641.js"></script>
@@ -270,22 +299,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
+<!-- VEHICLE SERVICING -->
+<section class="vehicle-servicing">
+  <div class="container">
+    <div class="vs-grid">
+      <div class="vs-image" data-reveal="left">
+        <img src="../images/Performance Plus - Vehicle Servicing.jpg" alt="Vehicle servicing at Performance Plus Queanbeyan" loading="lazy">
+      </div>
+      <div class="vs-copy" data-reveal="right">
+        <span class="section-label">Our Workshop</span>
+        <h2 class="section-heading">Fleet Servicing Done Right, Every Time</h2>
+        <p>At Performance Plus, fleet vehicles receive the same high standard of care as every other car through our workshop. We're authorised to service vehicles managed by Fleet Card, Maxxia, AVC, Smartfleet and others — with minimal downtime and clear communication throughout.</p>
+        <p>Family-owned since 1986, we've built our reputation on honest advice, guaranteed workmanship, and looking after our customers like locals, not numbers.</p>
+        <div class="vs-cta">
+          <a href="tel:+61263241091" class="btn btn-red">Call Now</a>
+          <a href="#form" class="btn btn-outline-red">Get an Estimate</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- USP CARDS -->
 <section class="usp" aria-label="Why choose Performance Plus">
   <div class="container">
     <h2 class="section-heading">3 Reasons Why You'll Love Performance Plus Queanbeyan</h2>
     <div class="usp-cards">
-      <div class="usp-card">
+      <div class="usp-card" data-reveal data-reveal-delay="1">
         <div class="usp-card-number">01</div>
         <h3>You're Treated Like a Person, Not a Paycheque</h3>
         <p>We take the time to explain what your car needs (and what it doesn't). No jargon, no upselling — just honest advice.</p>
       </div>
-      <div class="usp-card">
+      <div class="usp-card" data-reveal data-reveal-delay="2">
         <div class="usp-card-number">02</div>
         <h3>Repairs That Are Done Right – First Time</h3>
         <p>With decades of hands-on experience and the latest tools, we fix it properly and back it with a guarantee.</p>
       </div>
-      <div class="usp-card">
+      <div class="usp-card" data-reveal data-reveal-delay="3">
         <div class="usp-card-number">03</div>
         <h3>We Respect Your Time and Budget</h3>
         <p>Need to get back to work? We offer courtesy cars for major repairs and aim to turn services around quickly and affordably.</p>
@@ -466,6 +516,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     document.querySelectorAll('.faq-item').forEach(function(el) { el.classList.remove('open'); });
     if (!isOpen) { item.classList.add('open'); }
   }
+</script>
+<script>
+(function() {
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('[data-reveal]').forEach(function(el) { el.classList.add('revealed'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) { entry.target.classList.add('revealed'); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('[data-reveal]').forEach(function(el) { observer.observe(el); });
+}());
 </script>
 </body>
 </html>
