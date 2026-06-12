@@ -225,6 +225,19 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
   padding: 72px 0 60px;
   border-bottom: 3px solid var(--pp-red);
 }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.hero-copy { }
+.hero-image img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
 .hero h1 { margin-bottom: 0.75rem; }
 .hero h2 {
   font-family: var(--font-body);
@@ -236,11 +249,18 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
   line-height: 1.6;
 }
 .hero p {
-  max-width: 760px;
   margin-bottom: 2rem;
   font-size: 1rem;
   line-height: 1.75;
   color: var(--pp-body);
+}
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .hero-image { order: -1; }
+  .hero-image img { height: 240px; }
 }
 
 /* ============================================================
@@ -489,7 +509,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
   text-transform: uppercase;
   letter-spacing: 0.02em;
   flex: 1;
-  text-align: center;
+  text-align: left;
 }
 .faq-icon {
   width: 24px;
@@ -696,10 +716,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- HERO -->
 <section class="hero" aria-label="Diesel mechanic hero">
   <div class="container">
-    <h1>Diesel Mechanic Queanbeyan</h1>
-    <h2>Expert Diesel Servicing &amp; Repairs for All Makes and Models</h2>
-    <p>Diesel engines demand specialist knowledge  and that's exactly what we bring. At Performance Plus, we've been servicing and repairing diesel vehicles in Queanbeyan and Canberra since 1986. From routine diesel servicing to complex injector repairs and DPF issues, our experienced team diagnoses the problem right the first time.</p>
-    <a href="#form" class="btn btn-red">Book a Diesel Service</a>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h1>Diesel Mechanic Queanbeyan</h1>
+        <h2>Expert Diesel Servicing &amp; Repairs for All Makes and Models</h2>
+        <p>Diesel engines demand specialist knowledge and that's exactly what we bring. At Performance Plus, we've been servicing and repairing diesel vehicles in Queanbeyan and Canberra since 1986. From routine diesel servicing to complex injector repairs and DPF issues, our experienced team diagnoses the problem right the first time.</p>
+        <a href="#form" class="btn btn-red">Book a Diesel Service</a>
+      </div>
+      <div class="hero-image">
+        <img src="../images/Auto-Repair-Services-Queanbeyan-1024x768.jpg" alt="Diesel vehicle servicing at Performance Plus Queanbeyan" loading="eager">
+      </div>
+    </div>
   </div>
 </section>
 
