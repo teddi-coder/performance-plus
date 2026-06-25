@@ -56,7 +56,7 @@ async function sendEmail(
   replyTo?: string
 ): Promise<void> {
   const body: Record<string, unknown> = {
-    from: "Performance Plus <performanceplus@mechanicmarketing.co>",
+    from: "Performance Plus <bookings@performanceplus.mechanicmarketing.co>",
     to: [to],
     subject,
     text,
