@@ -131,7 +131,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 .btn-sm { padding: 10px 22px; font-size: 0.85rem; }
 
 /* ============================================================
-   TOP BAR (sticky header — logo + phone + get a quote)
+   TOP BAR (sticky header - logo + phone + get a quote)
    ============================================================ */
 .top-bar {
   background: var(--pp-white);
@@ -1025,12 +1025,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <!-- ============================================================
-     TOP BAR (sticky — logo + phone + get a quote)
+     TOP BAR (sticky - logo + phone + get a quote)
      ============================================================ -->
 <div class="top-bar" id="topBar">
   <div class="container">
     <div class="top-bar-logo">
-      <a href="./" aria-label="Performance Plus — Home">
+      <a href="./" aria-label="Performance Plus - Home">
         <img
           src="images/performance-plus-logo.gif"
           alt="Performance Plus logo"
@@ -1174,7 +1174,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>When it comes to car servicing, not all mechanics are created equal. With over 35 years of experience, <strong>Performance Plus</strong> is proud to be Queanbeyan's go-to automotive service centre – known for our integrity, technical know-how and genuine customer care.</p>
         <p>DIY fixes or cheap repairs can lead to costly damage, safety risks and voided warranties. That's why we only use quality parts, follow manufacturer guidelines, and <strong>guarantee all our work</strong> – giving you total peace of mind.</p>
         <div class="about-cta">
-          <a href="tel:+61263241091">Call 02 6324 1091 — Talk to a Local Expert Today</a>
+          <a href="tel:+61263241091">Call 02 6324 1091 - Talk to a Local Expert Today</a>
         </div>
       </div>
       <div class="about-image" data-reveal="right">
@@ -1363,7 +1363,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="footer-brand">
         <div class="footer-logo">
-          <a href="#" aria-label="Performance Plus — Home">
+          <a href="#" aria-label="Performance Plus - Home">
             <img
               src="images/performance-plus-logo.gif"
               alt="Performance Plus logo"
@@ -1476,6 +1476,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
 
+        <span class="form-section-label">Booking Details</span>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-rego">Rego Number <span aria-label="required">*</span></label>
+            <input type="text" id="f-rego" name="registration" placeholder="e.g. ABC123" required>
+          </div>
+          <div class="form-group">
+            <label for="f-date">Preferred Date <span aria-label="required">*</span></label>
+            <input type="date" id="f-date" name="preferred_date" required>
+          </div>
+        </div>
+
         <span class="form-section-label">Notes</span>
         <div class="form-row single">
           <div class="form-group">
@@ -1484,10 +1496,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
 
+        <input type="hidden" name="notification_email" value="admin@performanceplus.net.au">
+
         <div class="form-submit-row">
           <button type="submit" class="btn-submit">Get an Estimate &#10230;</button>
         </div>
       </form>
+      <div id="pp-form-success" style="display:none;padding:1.25rem 0;">
+        <p><strong>Thanks! We've received your booking request.</strong></p>
+        <p>We'll be in touch shortly to confirm your preferred date. If you need to reach us sooner, call <a href="tel:+61263241091">02 6324 1091</a>.</p>
+      </div>
+      <div id="pp-form-error" style="display:none;padding:1rem 0;color:#c0392b;">
+        <p>Something went wrong - please try again or call us on <a href="tel:+61263241091">02 6324 1091</a>.</p>
+      </div>
     </div>
   </div>
 </div>
@@ -1555,13 +1576,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var SUPABASE_URL      = 'https://prqbvbhuwfpdkkrkqizj.supabase.co';
   var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBycWJ2Ymh1d2ZwZGtrcmtxaXpqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc5NjIzMjYsImV4cCI6MjAyMzUzODMyNn0.gN1RjSEFRBFhDhOe-PN-HS2bCQvfnhGaYJQFzHLCpjQ';
 
+  // Set preferred date min (today) and max (1 year from today)
+  var dateInput = document.getElementById('f-date');
+  if (dateInput) {
+    var today = new Date().toISOString().split('T')[0];
+    dateInput.min = today;
+    var maxDate = new Date();
+    maxDate.setFullYear(maxDate.getFullYear() + 1);
+    dateInput.max = maxDate.toISOString().split('T')[0];
+  }
+
   var form = document.getElementById('pp-booking-form');
   if (!form) return;
+
+  var successDiv = document.getElementById('pp-form-success');
+  var errorDiv   = document.getElementById('pp-form-error');
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    // WhatConverts — fire immediately on submit, before any async work
+    // WhatConverts - fire immediately on submit, before any async work
     try {
       if (typeof window.wc_capture_form === 'function') {
         window.wc_capture_form(form);
@@ -1575,7 +1609,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       submitBtn.disabled    = true;
       submitBtn.textContent = 'Sending…';
     }
+    if (errorDiv) errorDiv.style.display = 'none';
 
+    var params = new URLSearchParams(window.location.search);
     var payload = {
       customer_name:  document.getElementById('f-name').value.trim(),
       customer_phone: document.getElementById('f-phone').value.trim(),
@@ -1583,23 +1619,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       vehicle_make:   document.getElementById('f-make').value.trim() || null,
       vehicle_model:  document.getElementById('f-model').value.trim() || null,
       vehicle_year:   document.getElementById('f-year').value.trim() || null,
+      registration:   document.getElementById('f-rego').value.trim() || null,
+      preferred_date: document.getElementById('f-date').value,
       notes:          document.getElementById('f-notes').value.trim() || null,
-      utm_source:     new URLSearchParams(window.location.search).get('utm_source'),
-      utm_medium:     new URLSearchParams(window.location.search).get('utm_medium'),
-      utm_campaign:   new URLSearchParams(window.location.search).get('utm_campaign'),
-      gclid:          new URLSearchParams(window.location.search).get('gclid'),
-      landing_page:   window.location.pathname
+      page_source:    'homepage',
+      utm_source:     params.get('utm_source') || '(not set)',
+      utm_medium:     params.get('utm_medium') || '(not set)',
+      utm_campaign:   params.get('utm_campaign') || '(not set)',
+      utm_content:    params.get('utm_content') || '(not set)',
+      utm_term:       params.get('utm_term') || '(not set)',
+      gclid:          params.get('gclid') || '(not set)'
     };
 
     var sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-    sb.from('pp_bookings').insert([payload]).then(function(result) {
+    sb.from('performance_plus_bookings').insert([payload]).then(function(result) {
       if (result.error) {
         console.error('Booking error:', result.error);
         if (submitBtn) {
           submitBtn.disabled    = false;
           submitBtn.textContent = 'Get an Estimate →';
         }
+        if (errorDiv) errorDiv.style.display = 'block';
         return;
       }
 
@@ -1609,7 +1650,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
 
       // Success state
-      form.innerHTML = '<p style="padding:1rem 0;font-weight:600;color:#c0392b;">Thanks! We\'ll be in touch to confirm your booking.</p>';
+      form.style.display = 'none';
+      if (successDiv) successDiv.style.display = 'block';
     });
   });
 

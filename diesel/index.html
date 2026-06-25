@@ -667,7 +667,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="top-bar" id="topBar">
   <div class="container">
     <div class="top-bar-logo">
-      <a href="../" aria-label="Performance Plus — Home">
+      <a href="../" aria-label="Performance Plus - Home">
         <img src="../images/performance-plus-logo.gif" alt="Performance Plus logo" height="52">
       </a>
     </div>
@@ -698,7 +698,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <h1>Diesel Mechanic Queanbeyan</h1>
     <h2>Expert Diesel Servicing &amp; Repairs for All Makes and Models</h2>
-    <p>Diesel engines demand specialist knowledge — and that's exactly what we bring. At Performance Plus, we've been servicing and repairing diesel vehicles in Queanbeyan and Canberra since 1986. From routine diesel servicing to complex injector repairs and DPF issues, our experienced team diagnoses the problem right the first time.</p>
+    <p>Diesel engines demand specialist knowledge - and that's exactly what we bring. At Performance Plus, we've been servicing and repairing diesel vehicles in Queanbeyan and Canberra since 1986. From routine diesel servicing to complex injector repairs and DPF issues, our experienced team diagnoses the problem right the first time.</p>
     <a href="#form" class="btn btn-red">Book a Diesel Service</a>
   </div>
 </section>
@@ -709,7 +709,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="content-grid">
       <div class="content-block">
         <h3>Diesel Specialists You Can Trust</h3>
-        <p>Diesel vehicles — whether utes, 4WDs, commercial vehicles, or passenger cars — have unique servicing needs. Our technicians understand diesel fuel systems, turbochargers, and emission control systems inside out.</p>
+        <p>Diesel vehicles, whether utes, 4WDs, commercial vehicles, or passenger cars, have unique servicing needs. Our technicians understand diesel fuel systems, turbochargers, and emission control systems inside out.</p>
         <p>We service all popular diesel brands including Toyota, Ford, Mitsubishi, Isuzu, Nissan, Mazda, Volkswagen, Mercedes-Benz, and more.</p>
       </div>
       <div class="content-block">
@@ -752,7 +752,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="vs-copy" data-reveal="right">
         <span class="section-label">Our Workshop</span>
         <h2 class="section-heading">Diesel Done Right</h2>
-        <p>Diesel engines work harder and last longer when they're properly maintained. At Performance Plus, we use the right oils, filters, and parts for your specific diesel vehicle — and we take the time to explain exactly what's been done and why.</p>
+        <p>Diesel engines work harder and last longer when they're properly maintained. At Performance Plus, we use the right oils, filters, and parts for your specific diesel vehicle - and we take the time to explain exactly what's been done and why.</p>
         <p>Family-owned since 1986, we've built a reputation on honest advice, precise workmanship, and genuine care for our customers. Whether you drive a diesel ute, 4WD, or passenger car, you're in good hands.</p>
         <div class="vs-cta">
           <a href="tel:+61263241091" class="btn btn-red">Call Now</a>
@@ -771,12 +771,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="usp-card" data-reveal data-reveal-delay="1">
         <div class="usp-card-number">01</div>
         <h3>Real Diesel Know-How</h3>
-        <p>Diesel isn't just a fuel type — it's a completely different system. Our technicians have the specialist training and diagnostic equipment to get it right.</p>
+        <p>Diesel isn't just a fuel type - it's a completely different system. Our technicians have the specialist training and diagnostic equipment to get it right.</p>
       </div>
       <div class="usp-card" data-reveal data-reveal-delay="2">
         <div class="usp-card-number">02</div>
         <h3>Honest Advice, No Guesswork</h3>
-        <p>We diagnose the actual problem before touching a thing. No unnecessary work, no inflated estimates — just a clear explanation of what your diesel needs.</p>
+        <p>We diagnose the actual problem before touching a thing. No unnecessary work, no inflated estimates - just a clear explanation of what your diesel needs.</p>
       </div>
       <div class="usp-card" data-reveal data-reveal-delay="3">
         <div class="usp-card-number">03</div>
@@ -821,7 +821,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="section-heading">Book a Diesel Service</h2>
     <p class="form-sub">We're open Tuesday–Friday, 7:30 AM – 5:30 PM. Fill in your details below and we'll confirm a time that suits you.</p>
     <div class="form-wrap">
-      <form id="contact-form" action="mailto:contact@performanceplus.net.au" method="post" enctype="text/plain">
+      <form id="contact-form" novalidate>
         <span class="form-section-label">Contact Details</span>
         <div class="form-row">
           <div class="form-group">
@@ -854,6 +854,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <input type="text" id="f-year" name="Vehicle Year" placeholder="e.g. 2021">
           </div>
         </div>
+        <span class="form-section-label">Booking Details</span>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-rego">Rego Number <span aria-label="required">*</span></label>
+            <input type="text" id="f-rego" name="registration" placeholder="e.g. ABC123" required>
+          </div>
+          <div class="form-group">
+            <label for="f-date">Preferred Date <span aria-label="required">*</span></label>
+            <input type="date" id="f-date" name="preferred_date" required>
+          </div>
+        </div>
         <span class="form-section-label">Notes</span>
         <div class="form-row single">
           <div class="form-group">
@@ -861,10 +872,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <textarea id="f-notes" name="Notes" placeholder="e.g. Diesel service due, DPF warning light on..."></textarea>
           </div>
         </div>
+        <input type="hidden" name="notification_email" value="admin@performanceplus.net.au">
         <div class="form-submit-row">
           <button type="submit" class="btn-submit">Get an Estimate &#10230;</button>
         </div>
       </form>
+      <div id="pp-form-success" style="display:none;padding:1.25rem 0;">
+        <p><strong>Thanks! We've received your booking request.</strong></p>
+        <p>We'll be in touch shortly to confirm your preferred date. If you need to reach us sooner, call <a href="tel:+61263241091">02 6324 1091</a>.</p>
+      </div>
+      <div id="pp-form-error" style="display:none;padding:1rem 0;color:#c0392b;">
+        <p>Something went wrong - please try again or call us on <a href="tel:+61263241091">02 6324 1091</a>.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -883,7 +902,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="faq-item">
         <div class="faq-question" onclick="toggleFaq(this)">
-          <span class="faq-question-text">My DPF warning light is on — what does that mean?</span>
+          <span class="faq-question-text">My DPF warning light is on - what does that mean?</span>
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">A DPF (Diesel Particulate Filter) warning light means the filter is becoming blocked with soot. In some cases a forced regeneration or professional clean can clear it. Ignoring it can lead to expensive damage. Bring it in and we'll diagnose the issue properly.</div>
@@ -900,11 +919,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="faq-question-text">Can you service my diesel under its new car warranty?</span>
           <span class="faq-icon">+</span>
         </div>
-        <div class="faq-answer">Yes. Under Australian Consumer Law, you can have your vehicle serviced by any qualified mechanic without voiding the manufacturer's warranty, provided the service meets manufacturer specifications — which ours does.</div>
+        <div class="faq-answer">Yes. Under Australian Consumer Law, you can have your vehicle serviced by any qualified mechanic without voiding the manufacturer's warranty, provided the service meets manufacturer specifications - which ours does.</div>
       </div>
       <div class="faq-item">
         <div class="faq-question" onclick="toggleFaq(this)">
-          <span class="faq-question-text">My diesel is rough to start or has lost power — what could it be?</span>
+          <span class="faq-question-text">My diesel is rough to start or has lost power - what could it be?</span>
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">Common causes include worn glow plugs, dirty or failing injectors, a blocked fuel filter, or turbo issues. We'll run a full diagnostic to identify the root cause before recommending any repairs.</div>
@@ -919,7 +938,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="footer-logo">
-          <a href="../" aria-label="Performance Plus — Home">
+          <a href="../" aria-label="Performance Plus - Home">
             <img src="../images/performance-plus-logo.gif" alt="Performance Plus logo" height="52">
           </a>
         </div>
@@ -991,6 +1010,99 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   }, { threshold: 0.12 });
   document.querySelectorAll('[data-reveal]').forEach(function(el) { observer.observe(el); });
+}());
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+/* ============================================================
+   BOOKING FORM SUBMIT
+   ============================================================ */
+(function() {
+  'use strict';
+
+  var SUPABASE_URL      = 'https://prqbvbhuwfpdkkrkqizj.supabase.co';
+  var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBycWJ2Ymh1d2ZwZGtrcmtxaXpqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc5NjIzMjYsImV4cCI6MjAyMzUzODMyNn0.gN1RjSEFRBFhDhOe-PN-HS2bCQvfnhGaYJQFzHLCpjQ';
+
+  // Set preferred date min (today) and max (1 year from today)
+  var dateInput = document.getElementById('f-date');
+  if (dateInput) {
+    var today = new Date().toISOString().split('T')[0];
+    dateInput.min = today;
+    var maxDate = new Date();
+    maxDate.setFullYear(maxDate.getFullYear() + 1);
+    dateInput.max = maxDate.toISOString().split('T')[0];
+  }
+
+  var form = document.getElementById('contact-form');
+  if (!form) return;
+
+  var successDiv = document.getElementById('pp-form-success');
+  var errorDiv   = document.getElementById('pp-form-error');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // WhatConverts - fire immediately on submit, before any async work
+    try {
+      if (typeof window.wc_capture_form === 'function') {
+        window.wc_capture_form(form);
+      }
+    } catch (wcErr) {
+      console.warn('WhatConverts capture failed:', wcErr);
+    }
+
+    var submitBtn = form.querySelector('.btn-submit');
+    if (submitBtn) {
+      submitBtn.disabled    = true;
+      submitBtn.textContent = 'Sending…';
+    }
+    if (errorDiv) errorDiv.style.display = 'none';
+
+    var params = new URLSearchParams(window.location.search);
+    var payload = {
+      customer_name:  document.getElementById('f-name').value.trim(),
+      customer_phone: document.getElementById('f-phone').value.trim(),
+      customer_email: document.getElementById('f-email').value.trim(),
+      vehicle_make:   document.getElementById('f-make').value.trim() || null,
+      vehicle_model:  document.getElementById('f-model').value.trim() || null,
+      vehicle_year:   document.getElementById('f-year').value.trim() || null,
+      registration:   document.getElementById('f-rego').value.trim() || null,
+      preferred_date: document.getElementById('f-date').value,
+      notes:          document.getElementById('f-notes').value.trim() || null,
+      page_source:    'diesel',
+      utm_source:     params.get('utm_source') || '(not set)',
+      utm_medium:     params.get('utm_medium') || '(not set)',
+      utm_campaign:   params.get('utm_campaign') || '(not set)',
+      utm_content:    params.get('utm_content') || '(not set)',
+      utm_term:       params.get('utm_term') || '(not set)',
+      gclid:          params.get('gclid') || '(not set)'
+    };
+
+    var sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    sb.from('performance_plus_bookings').insert([payload]).then(function(result) {
+      if (result.error) {
+        console.error('Booking error:', result.error);
+        if (submitBtn) {
+          submitBtn.disabled    = false;
+          submitBtn.textContent = 'Get an Estimate →';
+        }
+        if (errorDiv) errorDiv.style.display = 'block';
+        return;
+      }
+
+      // GA4
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', { form_name: 'diesel_booking_form' });
+      }
+
+      // Success state
+      form.style.display = 'none';
+      if (successDiv) successDiv.style.display = 'block';
+    });
+  });
+
 }());
 </script>
 </body>
