@@ -667,7 +667,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="top-bar" id="topBar">
   <div class="container">
     <div class="top-bar-logo">
-      <a href="../" aria-label="Performance Plus — Home">
+      <a href="../" aria-label="Performance Plus - Home">
         <img src="../images/performance-plus-logo.gif" alt="Performance Plus logo" height="52">
       </a>
     </div>
@@ -698,7 +698,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <h1>Logbook Servicing Queanbeyan</h1>
     <h2>Warranty-Safe Logbook Servicing You Can Trust</h2>
-    <p>You don't need to go back to the dealership to keep your new car warranty valid. At Performance Plus, we provide logbook servicing in Queanbeyan that meets manufacturer specifications — without the dealership price tag. We're a family-owned workshop, trusted by Queanbeyan and Canberra drivers since 1986.</p>
+    <p>You don't need to go back to the dealership to keep your new car warranty valid. At Performance Plus, we provide logbook servicing in Queanbeyan that meets manufacturer specifications - without the dealership price tag. We're a family-owned workshop, trusted by Queanbeyan and Canberra drivers since 1986.</p>
     <a href="#form" class="btn btn-red">Book a Logbook Service</a>
   </div>
 </section>
@@ -749,7 +749,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="vs-copy" data-reveal="right">
         <span class="section-label">Our Workshop</span>
         <h2 class="section-heading">Servicing Done Right, Every Time</h2>
-        <p>At Performance Plus, every vehicle that comes through our workshop is treated with care and precision. Whether it's a routine logbook service or a complex repair, our experienced technicians follow manufacturer guidelines and use quality parts — so you drive away with confidence.</p>
+        <p>At Performance Plus, every vehicle that comes through our workshop is treated with care and precision. Whether it's a routine logbook service or a complex repair, our experienced technicians follow manufacturer guidelines and use quality parts - so you drive away with confidence.</p>
         <p>Family-owned since 1986, we've built our reputation on honest advice, guaranteed workmanship, and looking after our customers like locals, not numbers.</p>
         <div class="vs-cta">
           <a href="tel:+61263241091" class="btn btn-red">Call Now</a>
@@ -768,7 +768,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="usp-card" data-reveal data-reveal-delay="1">
         <div class="usp-card-number">01</div>
         <h3>You're Treated Like a Person, Not a Paycheque</h3>
-        <p>We take the time to explain what your car needs (and what it doesn't). No jargon, no upselling — just honest advice.</p>
+        <p>We take the time to explain what your car needs (and what it doesn't). No jargon, no upselling - just honest advice.</p>
       </div>
       <div class="usp-card" data-reveal data-reveal-delay="2">
         <div class="usp-card-number">02</div>
@@ -813,13 +813,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- FORM -->
-<!-- TODO: replace action with form handler — contact@performanceplus.net.au -->
+<!-- TODO: replace action with form handler - contact@performanceplus.net.au -->
 <section class="form-section" id="form" aria-label="Book online">
   <div class="container">
     <h2 class="section-heading">Book a Logbook Service</h2>
     <p class="form-sub">We're open Tuesday–Friday, 7:30 AM – 5:30 PM. Fill in your details below and we'll confirm a time that suits you.</p>
     <div class="form-wrap">
-      <form id="contact-form" action="mailto:contact@performanceplus.net.au" method="post" enctype="text/plain">
+      <form id="contact-form" novalidate>
         <span class="form-section-label">Contact Details</span>
         <div class="form-row">
           <div class="form-group">
@@ -852,6 +852,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <input type="text" id="f-year" name="Vehicle Year" placeholder="e.g. 2019">
           </div>
         </div>
+        <span class="form-section-label">Booking Details</span>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-rego">Rego Number <span aria-label="required">*</span></label>
+            <input type="text" id="f-rego" name="registration" placeholder="e.g. ABC123" required>
+          </div>
+          <div class="form-group">
+            <label for="f-date">Preferred Date <span aria-label="required">*</span></label>
+            <input type="date" id="f-date" name="preferred_date" required>
+          </div>
+        </div>
+
         <span class="form-section-label">Notes</span>
         <div class="form-row single">
           <div class="form-group">
@@ -863,6 +875,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <button type="submit" class="btn-submit">Get an Estimate &#10230;</button>
         </div>
       </form>
+      <div id="pp-form-success" style="display:none;padding:1.25rem 0;">
+        <p><strong>Thanks! We've received your booking request.</strong></p>
+        <p>We'll be in touch shortly to confirm your preferred date. If you need to reach us sooner, call <a href="tel:+61263241091">02 6324 1091</a>.</p>
+      </div>
+      <div id="pp-form-error" style="display:none;padding:1rem 0;color:#c0392b;">
+        <p>Something went wrong - please try again or call us on <a href="tel:+61263241091">02 6324 1091</a>.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -877,7 +896,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="faq-question-text">Will logbook servicing with you void my new car warranty?</span>
           <span class="faq-icon">+</span>
         </div>
-        <div class="faq-answer">No. Under Australian Consumer Law, you're not required to use a dealership for logbook servicing to maintain your warranty, provided the service meets manufacturer specifications — which ours does.</div>
+        <div class="faq-answer">No. Under Australian Consumer Law, you're not required to use a dealership for logbook servicing to maintain your warranty, provided the service meets manufacturer specifications - which ours does.</div>
       </div>
       <div class="faq-item">
         <div class="faq-question" onclick="toggleFaq(this)">
@@ -910,7 +929,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="footer-logo">
-          <a href="../" aria-label="Performance Plus — Home">
+          <a href="../" aria-label="Performance Plus - Home">
             <img src="../images/performance-plus-logo.gif" alt="Performance Plus logo" height="52">
           </a>
         </div>
@@ -981,6 +1000,95 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   }, { threshold: 0.12 });
   document.querySelectorAll('[data-reveal]').forEach(function(el) { observer.observe(el); });
+}());
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+/* ============================================================
+   BOOKING FORM SUBMIT
+   ============================================================ */
+(function() {
+  'use strict';
+
+  var SUPABASE_URL      = 'https://prqbvbhuwfpdkkrkqizj.supabase.co';
+  var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBycWJ2Ymh1d2ZwZGtrcmtxaXpqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc5NjIzMjYsImV4cCI6MjAyMzUzODMyNn0.gN1RjSEFRBFhDhOe-PN-HS2bCQvfnhGaYJQFzHLCpjQ';
+
+  var dateInput = document.getElementById('f-date');
+  if (dateInput) {
+    var today = new Date().toISOString().split('T')[0];
+    dateInput.min = today;
+    var maxDate = new Date();
+    maxDate.setFullYear(maxDate.getFullYear() + 1);
+    dateInput.max = maxDate.toISOString().split('T')[0];
+  }
+
+  var form = document.getElementById('contact-form');
+  if (!form) return;
+
+  var successDiv = document.getElementById('pp-form-success');
+  var errorDiv   = document.getElementById('pp-form-error');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    try {
+      if (typeof window.wc_capture_form === 'function') {
+        window.wc_capture_form(form);
+      }
+    } catch (wcErr) {
+      console.warn('WhatConverts capture failed:', wcErr);
+    }
+
+    var submitBtn = form.querySelector('.btn-submit');
+    if (submitBtn) {
+      submitBtn.disabled    = true;
+      submitBtn.textContent = 'Sending…';
+    }
+    if (errorDiv) errorDiv.style.display = 'none';
+
+    var params = new URLSearchParams(window.location.search);
+    var payload = {
+      customer_name:  document.getElementById('f-name').value.trim(),
+      customer_phone: document.getElementById('f-phone').value.trim(),
+      customer_email: document.getElementById('f-email').value.trim(),
+      vehicle_make:   document.getElementById('f-make').value.trim() || null,
+      vehicle_model:  document.getElementById('f-model').value.trim() || null,
+      vehicle_year:   document.getElementById('f-year').value.trim() || null,
+      registration:   document.getElementById('f-rego').value.trim() || null,
+      preferred_date: document.getElementById('f-date').value,
+      notes:          document.getElementById('f-notes').value.trim() || null,
+      page_source:    'logbook',
+      utm_source:     params.get('utm_source') || '(not set)',
+      utm_medium:     params.get('utm_medium') || '(not set)',
+      utm_campaign:   params.get('utm_campaign') || '(not set)',
+      utm_content:    params.get('utm_content') || '(not set)',
+      utm_term:       params.get('utm_term') || '(not set)',
+      gclid:          params.get('gclid') || '(not set)'
+    };
+
+    var sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    sb.from('performance_plus_bookings').insert([payload]).then(function(result) {
+      if (result.error) {
+        console.error('Booking error:', result.error);
+        if (submitBtn) {
+          submitBtn.disabled    = false;
+          submitBtn.textContent = 'Get an Estimate →';
+        }
+        if (errorDiv) errorDiv.style.display = 'block';
+        return;
+      }
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', { form_name: 'logbook_booking_form' });
+      }
+
+      form.style.display = 'none';
+      if (successDiv) successDiv.style.display = 'block';
+    });
+  });
+
 }());
 </script>
 </body>
